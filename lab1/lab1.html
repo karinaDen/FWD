@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Lab 1</title>
+  <style>
+    h6 {
+      color: blueviolet;
+    }
+    img {
+      width: 100px;
+      height: 100px;
+    }
+    .button {
+      padding: 25px;
+      margin-left: 10px;
+      font-size: 2em;
+      background-color: aquamarine;
+    }
+    ul {
+      margin-top: 0;
+      border-color: chocolate;
+      border-width: 5px;
+      border-style: dotted;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h6 id = "heading" style="font-size: 24px;">Heading1</h6>
+    <img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" />
+
+    <p>Some inline text <a href="https://googlw.com">Google</a> </p>
+
+    <button class = "button" onclick="alert('button clicked')">Button content</button>
+
+    <p style="margin-bottom: 0;"> My favorite food</p>
+    <ul>
+      <li>something</li>
+    </ul>
+
+  </main>
+  <script>
+    const heading = document.getElementById('heading');
+    heading.textContent = 'Heading 6';
+    console.log(heading);
+  </script>
+</body>
+</html>

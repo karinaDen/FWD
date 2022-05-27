@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 1</title>
+</head>
+<body>
+  <main>
+      <lable for="temp=input">Enter the temperature in degrees Fahrenheit:</lable>
+      <input id="temp-input" type="number" />
+      <button id="convert-btn"> Convert</button>
+      <p> Result: <span id="result"> awaiting input ... </span></p>
+  </main>
+    <script>
+        const button = document.getElementById('convert-btn');
+        const result = document.getElementById('result');
+
+        /** @type {HTMLInputElement]
+         */
+        const fahrenheit = document.getElementById('temp-input');
+        function convert(){
+            const value = parseInt(fahrenheit.value);
+            const celsius = (5/9) * (value - 32);
+            result.innerText =  celsius;
+        }
+
+
+        button.addEventListener("click", convert)
+    </script>
+</body>
+</html>
