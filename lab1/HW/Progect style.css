@@ -1,8 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     font-family: 'Inika', serif;
     position: relative;
 
@@ -13,7 +14,7 @@ body{
     background: #FFECEB;
 }
 
-.header{
+.header {
     width: 100%;
     position: absolute;
     height: 70px;
@@ -22,12 +23,13 @@ body{
     align-items: center;
 }
 
-.header_inner{
+.header_inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.header_Home{
+
+.header_Home {
     font-family: 'Inika';
     font-style: normal;
     font-weight: 400;
@@ -42,16 +44,18 @@ body{
     color: #876D6D;
 }
 
-.header_Home:hover{
+.header_Home:hover {
     color: #594646;
     text-decoration-line: underline;
 
 }
-.nav{
+
+.nav {
     text-transform: uppercase;
 
 }
-.nav_link{
+
+.nav_link {
     display: inline-block;
     vertical-align: top;
     margin: 26px;
@@ -65,7 +69,8 @@ body{
 
     transition: color .2s linear;
 }
-.nav_link:hover{
+
+.nav_link:hover {
     color: #594646;
     text-decoration-line: underline;
 
@@ -74,17 +79,19 @@ body{
 
 /* end of header block */
 
-.intro{
+.intro {
     width: 100%;
 }
-.Vector{
+
+.Vector {
     width: 100%;
 }
-.text1{
+
+.text1 {
     position: absolute;
     height: 520px;
     left: 25%;
-    top: 297px;
+    top: 15%;
 
     font-family: 'Inika';
     font-style: normal;

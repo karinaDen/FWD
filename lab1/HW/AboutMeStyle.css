@@ -1,12 +1,13 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
-body{
+
+body {
     font-family: 'Inika', serif;
     position: relative;
 
@@ -17,7 +18,7 @@ body{
     background: #FFECEB;
 }
 
-.header{
+.header {
     width: 100%;
     position: absolute;
     height: 70px;
@@ -26,12 +27,13 @@ body{
     align-items: center;
 }
 
-.header_inner{
+.header_inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.header_Home{
+
+.header_Home {
     font-family: 'Inika';
     font-style: normal;
     font-weight: 400;
@@ -46,18 +48,19 @@ body{
     color: #876D6D;
 }
 
-.header_Home:hover{
+.header_Home:hover {
     color: #594646;
     text-decoration-line: underline;
 
 }
-.nav{
+
+.nav {
     text-transform: uppercase;
 
 }
 
 
-.nav_link{
+.nav_link {
     display: inline-block;
     vertical-align: top;
     margin: 26px;
@@ -71,7 +74,8 @@ body{
 
     transition: color .2s linear;
 }
-.nav_link:hover{
+
+.nav_link:hover {
     color: #594646;
     text-decoration-line: underline;
 
@@ -80,37 +84,31 @@ body{
 
 /* end of header block */
 
-.intro{
+.intro {
+    background-image: url("images/Vector.svg");
+    background-repeat: repeat;
+    height: calc(1000px - 270px);
     width: 100%;
 
 }
-.Vector{
-    width: 100%;
-}
-.picture{
+
+
+.picture {
     position: absolute;
     width: 450px;
     height: 641px;
     left: 82px;
-    top: calc(50% - 641px/2 - 0.5px);
+    top: 11%;
     border-radius: 216.5px;
 }
-.text{
+
+.text {
     position: absolute;
     width: 711px;
-    height: 790px;
+    height: 600px;
     left: 661px;
     top: 156px;
 
-    font-family: 'Inika';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 47px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    text-transform: uppercase;
 
     color: #000000;
 }
