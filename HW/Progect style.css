@@ -105,6 +105,17 @@ body {
 
     color: #000000;
 }
+.secret{
+    font-size: 10px;
+    text-align: right;
+}
+.CorgiPic{
+    width: 32px;
+    height: 32px;
+}
+.dogImage{
+    margin-left: auto;
+}
 
 
 
