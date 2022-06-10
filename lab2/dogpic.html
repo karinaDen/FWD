@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DogpicAPI</title>
+</head>
+<body>
+<a target="_blank" href="https://icons8.com/icon/olDI0uD2USQE/corgi">Corgi</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<h1>Dog picture</h1>
+<button onClick="getRandomImage()">Get a random dog picture</button><br />
+<br />
+<img id="dogImage" src="https://dog.ceo/img/dog-api-logo.svg">
+<p id = "img"></p>
+
+<script>
+    function httpGet(theUrl)
+    {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", theUrl, false );
+        xmlHttp.send( null );
+        return xmlHttp.responseText;
+    }
+
+    function getRandomImage()
+    {
+        var json = httpGet('https://dog.ceo/api/breeds/image/random');
+        console.log(json);
+
+        var array = JSON.parse(json);
+        console.log(array);
+
+        var url = array.message;
+        console.log(url);
+
+        var image = document.getElementById('dogImage');
+
+        image.src = url;
+    }
+</script>
+</body>
+</html>
+

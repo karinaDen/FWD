@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-size: 2em;
+            padding: 1rem;
+            margin: 4px;
+        }
+        #part2 {
+            display: none;
+        }
+        #part2.active {
+            display: block;
+            color: transparent;
+            background-color: lightgray;
+        }
+        #part2.active:hover {
+            color: black;
+            background-color: initial;
+        }
+    </style>
+</head>
+<body>
+<h1>Programming Jokes</h1>
+<button id="get-joke-btn">Get a random joke</button>
+<form id="type-form">
+    <label><input type="radio" name="type" value="single" />Single</label>
+    <br/>
+    <label><input type="radio" name="type" value="twopart" />Twopart</label>
+    <br />
+    <label><input type="radio" name="type" value="" checked/>Any</label>
+</form>
+<p id="part1"></p>
+<p id="part2"></p>
+
+<script>
+    const getJokeBtn = document.getElementById('get-joke-btn');
+    const part1 = document.getElementById('part1');
+    const part2 = document.getElementById('part2');
+    const typeForm = document.getElementById('type-form');
+
+    function fetchSomeJoke(type) {
+        const params = new URLSearchParams();
+        if (type) {
+            params.append('type', type);
+        }
+        return fetch('https://v2.jokeapi.dev/joke/Programming?' + params.toString())
+            .then(r => r.json());
+    }
+
+    function handleJoke(jokeObj) {
+        switch (jokeObj.type) {
+            case 'single':
+                return handleOnePartJoke(jokeObj);
+            case 'twopart':
+                return handleTwoPartJoke(jokeObj);
+        }
+    }
+
+    function handleOnePartJoke(jokeObj) {
+        const { joke } = jokeObj;
+        part1.textContent = joke; // Note: never use innerHTML for unsantized input you don't control
+        part2.classList.remove('active');
+    }
+
+    function handleTwoPartJoke(jokeObj) {
+        const { setup, delivery } = jokeObj;
+        part1.textContent = setup;
+        part2.classList.add('active');
+        part2.textContent = delivery;
+    }
+
+    getJokeBtn.addEventListener('click', async function (e) {
+        part1.textContent = part2.textContent = 'Loading...';
+        const type = typeForm.elements.type.value;
+        const joke = await fetchSomeJoke(type);
+        handleJoke(joke);
+    });
+</script>
+</body>
+</html>
