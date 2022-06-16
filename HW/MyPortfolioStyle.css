@@ -28,6 +28,7 @@ body {
 
 .header_inner {
     display: flex;
+    height: 70px;
     justify-content: space-between;
     align-items: center;
     top: 5%;
@@ -77,8 +78,6 @@ body {
 /* end of header block */
 
 .intro {
-    background-image: url("images/Vector.svg");
-    background-repeat: repeat;
     height: calc(1000px - 270px);
     width: 100%;
 
